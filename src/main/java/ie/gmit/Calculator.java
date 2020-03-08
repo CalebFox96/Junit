@@ -22,7 +22,12 @@ public class Calculator {
         return result;
     }
     public int delete(int num1,int num2){
-        int result = num1 -num2;
-        return result;
+        if (num1 >0 && num2>0) {
+            int result = num1 - num2;
+            return result;
+        }
+        else{
+            throw new IllegalArgumentException("Invalid entry");
+        }
     }
 }

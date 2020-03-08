@@ -3,6 +3,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 public class CalculatorTest {
     Calculator myCalc;
@@ -11,8 +12,11 @@ public class CalculatorTest {
         myCalc = new Calculator();
     }
     @Test
-    void testAdd(){
+    void testAddTrue(){
         assertEquals(10,myCalc.add(5,5));
+    }
+    void testAddFalse(){
+        assertThrows(IllegalArgumentException.class, () -> myCalc.add(0,3));
     }
     @Test
     void testDelete(){
